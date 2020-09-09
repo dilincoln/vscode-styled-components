@@ -1,0 +1,98 @@
+{
+	"name": "vscode-styled-components",
+	"displayName": "vscode-styled-components",
+	"description": "Syntax highlighting for styled-components",
+	"version": "0.1.32",
+	"publisher": "diegolincoln",
+	"activationEvents": [
+		"onLanguage:javascript",
+		"onLanguage:javascriptreact",
+		"onLanguage:typescriptreact",
+		"onLanguage:typescript",
+		"onLanguage:vue"
+	],
+	"main": "./dist/extension.js",
+	"icon": "logo.png",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/dilincoln/vscode-styled-components.git"
+	},
+	"engines": {
+		"vscode": "^1.5.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"format": "prettier --write '**/*.{js,jsx,md,json,css}'",
+		"prepare": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test ./test"
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "source.css.styled",
+				"aliases": [
+					"CSS (Styled Components)"
+				],
+				"configuration": "./css.styled.configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "source.css.styled",
+				"scopeName": "source.css.styled",
+				"path": "./syntaxes/css.styled.json"
+			},
+			{
+				"injectTo": [
+					"source.js",
+					"source.ts",
+					"source.jsx",
+					"source.js.jsx",
+					"source.tsx",
+					"source.vue"
+				],
+				"scopeName": "styled",
+				"path": "./syntaxes/styled-components.json",
+				"embeddedLanguages": {
+					"source.css.scss": "css",
+					"meta.embedded.line.ts": "typescript"
+				}
+			}
+		],
+		"typescriptServerPlugins": [
+			{
+				"name": "typescript-styled-plugin",
+				"enableForWorkspaceTypeScriptVersions": true
+			}
+		],
+		"commands": [
+			{
+				"command": "extension.insertColonOrSemiColon",
+				"title": "Fix Colon and Semicolon"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "extension.insertColonOrSemiColon",
+				"key": "enter",
+				"when": "suggestWidgetVisible && textInputFocus && editorLangId =~ /javascript|typescript|javascriptreact|typescriptreact/)"
+			}
+		]
+	},
+	"dependencies": {
+		"typescript-styled-plugin": "0.15.0"
+	},
+	"devDependencies": {
+		"@types/node": "^14.6.4",
+		"prettier": "^1.14.3",
+		"prettier-cli": "^0.1.0",
+		"typescript": "^4.0.2",
+		"vscode": "^1.1.26"
+	}
+}
