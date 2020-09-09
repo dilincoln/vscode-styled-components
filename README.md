@@ -29,12 +29,12 @@ Uses a CSS grammar built on top of [language-sass](https://github.com/atom/langu
 Inside VSCode, press `Ctrl+P`, and enter:
 
 ```
-ext install vscode-styled-components
+ext install diegolincoln.vscode-styled-components
 ```
 
 It should be the top result.
 
-[[Source](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components)]
+[[Source](https://marketplace.visualstudio.com/items?itemName=diegolincoln.vscode-styled-components)]
 
 ## Features
 
