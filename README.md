@@ -1,3 +1,11 @@
+# Important
+
+Please use the [original](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components) extension that implements new features and resolve the problems with auto add colon and semicolon.
+
+I am very grateful to all yours!
+
+#
+
 ## VSCode Styled Components
 
 Forked from [styled-components](https://github.com/styled-components/styled-components)
