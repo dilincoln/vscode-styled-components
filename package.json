@@ -2,7 +2,7 @@
 	"name": "vscode-styled-components",
 	"displayName": "vscode-styled-components",
 	"description": "Syntax highlighting for styled-components",
-	"version": "0.1.32",
+	"version": "0.1.33",
 	"publisher": "diegolincoln",
 	"activationEvents": [
 		"onLanguage:javascript",
